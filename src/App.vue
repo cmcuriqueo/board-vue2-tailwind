@@ -1,28 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div 
+    id="app" 
+    class="bg-gradient-to-tl from-rose-400 via-fuchsia-500 to-indigo-500 w-full min-h-screen"
+  >
+    <HeaderBar />
+    <SecondaryHeader />
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HeaderBar from './components/Header.vue'
+import SecondaryHeader from './components/SecondaryHeaderBar.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderBar,
+    SecondaryHeader
+  },
+  mounted() {
+    /*
+    this.$store.dispatch('auth/login', 'testUser').then(() => {
+      console.log('logged in')
+    })
+    */
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
